@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <label for="nomVoiture">Nom :</label>
+    <input type="text" name="nomVoiture">
+    <label for="nanneVoiture">Anne :</label>
+    <input type="text" name="nanneVoiture">
+    <label for="modeleVoiture">Modele : </label>
+    <input type="text" name="modeleVoiture">
+
+    <% if(action == 'add'){
+      
+    }else
+    { %>
+      <table>
+        <tr>
+          <th> Marque </th>
+          <th> Annee </th>
+          <th> Modele </th>
+        </tr>
+        
+        <% 
+        if (sampleData.lenght >0){
+          sampleData.forEach(function(data){%>
+            
+              <tr>
+                <td><% data.nom %></td>
+                <td><% data.annee %></td>
+                <td><% data.modele %></td>
+              </tr>
+              <%
+              });
+            }
+            else{
+              %>
+              <tr colspan=3><tr>
+                <td>Aucun info</td>
+              </tr>
+                <%
+            }
+            %>
+        
+      </table>
+    <% } %>
+     
+    
+  </body>
+</html>
