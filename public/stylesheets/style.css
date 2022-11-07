@@ -3,6 +3,66 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+
+
+tr, th,td{
+  border: 2px solid black;
+}
+
+div{
+  margin: auto;
+  width: fit-content;
+}
+
+h1,h2,h3,a{
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+}
+section{
+  width: fit-content;
+  margin: auto;
+}
+input{
+  font-size: 35px;
+  margin-top: 5px;
+}
+label, a{
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a{
+  border: 2px solid black;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+  background-color: rgb(132, 206, 206);
+  text-decoration: none;
+  color: black;
+}
+
+body{
+  width: 80%;
+  margin: auto;
+  background-color: rgb(216, 208, 208);
+}
+section, table
+{
+  font-size: 25px;
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+td{
+  background-color: white;
+}
+
+th{
+  background-color: rgb(192, 159, 159);
 }
