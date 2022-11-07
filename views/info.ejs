@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= title %>info</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <h1><%= title %></h1>
-    <label for="nomVoiture">Nom :</label>
-    <input type="text" name="nomVoiture">
-    <label for="nanneVoiture">Anne :</label>
-    <input type="text" name="nanneVoiture">
-    <label for="modeleVoiture">Modele : </label>
-    <input type="text" name="modeleVoiture">
-
-    <% if(action == 'add'){
-      
+    
+    
+    <% if(action == 'ajouter'){%>
+      <form action="ajouterVoiture" method="post">
+      <label for="nomVoiture">Nom :</label>
+      <input type="text" name="nomVoiture">
+      <label for="nanneVoiture">Anne :</label>
+      <input type="text" name="nanneVoiture">
+      <label for="modeleVoiture">Modele : </label>
+      <input type="text" name="modeleVoiture">
+      <input type="submit" value="Ajouter"></input>
+    </form>
+      <%
     }else
     { %>
+      <a href="/info/ajouter"> Ajouter une voiture</a>
       <table>
         <tr>
-          <th> Marque </th>
-          <th> Annee </th>
-          <th> Modele </th>
+          <th>Marque </th>
+          <th>Annee </th>
+          <th>Modele </th>
         </tr>
+        <% if(action == 'ajouter'){%>
+          <h1><%= title %></h1>
+          <label for="nomVoiture">Nom :</label>
+          <input type="text" name="nomVoiture">
+          
+          <label for="anneVoiture">Anne :</label>
+          <input type="text" name="anneVoiture">
+
+          <label for="modeleVoiture">Modele : </label>
+          <input type="text" name="modeleVoiture">
+          <input type="submit" label="ajouter">
+
+
+       <% }%>
         
         <% 
-        if (sampleData.lenght >0){
-          sampleData.forEach(function(data){%>
-            
+        if (infoVoitures.length > 0 ){
+          infoVoitures.forEach(function(data){%>
+
               <tr>
-                <td><% data.nom %></td>
-                <td><% data.annee %></td>
-                <td><% data.modele %></td>
+                <td><%= data.nom %></td>
+                <td><%= data.annee %></td>
+                <td><%= data.modele %></td>
               </tr>
               <%
               });
             }
             else{
               %>
-              <tr colspan=3><tr>
+              <tr colspan= 3><tr>
                 <td>Aucun info</td>
               </tr>
                 <%

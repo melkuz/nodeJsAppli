@@ -6,12 +6,14 @@ const connection = mysql.createConnection({
   database: 'nodejs'
 })
 
-connection.connect()
-
-connection.query('SELECT * from voitures', (err, result, fields) => {
-  if (err) throw err
-
-  console.log('succes!')
+connection.connect(function(error){
+  if(error){
+    throw error;
+  }else{
+    console.log('succes!')
+  }
 })
+
+
 
 module.exports = connection;
