@@ -11,12 +11,12 @@ var database = require('../views/db')
 router.get('/', function(req, res, next) {
 
   database.query("Select * from voitures", function(error, data){
-    
+    console.log(data)
     if(error){
       throw error
     }else{
-      console.log(data)
-      res.render('info', { title: 'Liste des voitures', action: 'list', infoVoitures:data});
+      
+      res.render('info', { title: 'Liste des voitures', action: 'list', infoVoitures:data.rows});
     }
   })
 
