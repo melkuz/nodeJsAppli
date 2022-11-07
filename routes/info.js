@@ -28,8 +28,9 @@ router.get('/ajouter', function(req, res, next) {
 });
 
 router.post("/ajouterVoiture", function(request,res,next){
+  console.log(request.body)
   var nom = request.body.nomVoiture
-  var annee = request.body.anneVoiture
+  var annee = request.body.anneeVoiture
   var modele = request.body.modeleVoiture
   console.log(nom)
   console.log(annee)
@@ -43,7 +44,7 @@ router.post("/ajouterVoiture", function(request,res,next){
       throw error
     }else{
       
-          res.redirect('index', { title: 'Bienvenue dans le repertoire des voitures'});
+          res.redirect('/');
         
     }});
 
